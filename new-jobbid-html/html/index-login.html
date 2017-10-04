@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+	<title>Document</title>
+	<!-- bootstrap 3 -->
+	 <link href="css/bootstrap.css" rel="stylesheet">
+	 <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+     <script src="js/bootstrap.min.js"></script>
+	<!-- myStyles -->
+	 <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+	<div class="warp">
+		<header>
+			<div class="container">
+				<div class="row">
+					 <div id="top-header">
+					 	<div class="col-md-2">
+						 	 <div id="top-logo">
+						 	     <a href="#">
+						 	 	    <img src="img/header-brand.png" class="img-responsive">
+						 	 	</a>
+						 	 </div><!-- top-logo -->
+					 	 </div>
+					 	 <div class="col-md-10">
+					 	 	 <div id="top-menu">
+					 	 	 	<div class="col-md-4">
+						            <div id="search-job"> 
+						                <div class="input-group stylish-input-group">
+						                    <input type="text" class="form-control"  placeholder="ค้นหางาน ..." >
+						                    <span class="input-group-addon">
+						                        <button type="submit">
+						                            <span class="glyphicon glyphicon-search"></span>
+						                        </button>  
+						                    </span>
+						                </div>
+						            </div>
+						        </div><!--col-md-4-->
+						        <div class="col-md-8">
+						        	<div id="top-btn" class="clearfix">
+						        		<div id="login-detail">
+						        			<div id="login-menu">
+							        			<div class="btn-group">
+												  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+												    เมนูสมาชิก <span class="caret"></span>
+												  </button>
+												  <ul class="dropdown-menu">
+												    <li>Username : <span>Ushinotane</span></li>
+												    <li>ประเภท :	<b>owner</b></li>
+												    <li role="separator" class="divider"></li>
+												    <li><b>เมนูจัดการ โพสโปรเจ็ค :</b></li>
+												    <li><a href="#">งานกราฟฟิกดีไซน์/คอมพิวเตอร์/IT</a></li>
+												    <li role="separator" class="divider"></li>
+												    <li><b>เมนูจัดการทั่วไป :</b></li>
+												    <li><a href="#">แก้ไขรหัสผ่าน</a></li>
+												    <li><a href="#">โปรเจ็คของท่าน</a></li>
+												    <li><a href="#">ค้นหา freelance</a></li>
+												  </ul>
+												</div>
+											</div>
+											<ul>
+							        			<li><a href="logout.php" class="btn btn-info" id="btn-logout">ออกจากระบบ</a></li>
+							        		</ul>
+						        		</div>
+						        	</div>
+						        </div><!--col-md-8-->
+					 	 	 </div><!-- top-menu -->
+					 	 </div>
+					 </div><!-- top-header -->
+				 </div>
+			</div><!-- container -->
+		</header>
+		<div class="site-banner">
+		    <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div id="banner-area">
+                            <div id="banner-logo">
+                                <img src="img/header-brand.png" class="img-responsive">
+                            </div><!--banner-logo-->
+                            <div id="banner-text">
+                                <h1>ศูนย์รวม ฟรีแลนซ์ มืออาชีพ</h1>
+                                <h1>งานฟรีแลนซ์ <span>อันดับ 1</span> ในประเทศไทย</h1>
+                            </div>
+                            <div id="banner-regis">
+                                <a href="register.html" class="btn btn-info" id="banner-btn-regis">สมัครฟรี</a>
+                            </div>
+                        </div><!--banner-area-->
+                    </div><!--col-md-12-->
+                </div>
+		    </div><!--container-->
+		</div><!--site-banner-->
+		<navbar>
+		    <nav class="navbar navbar-inverse">
+              <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                  <ul class="nav navbar-nav">
+                    <li class="active"><a href="index.html">หน้าหลัก</a></li>
+                    <li><a href="find-freelance.html">ค้นหาฟรีแลนซ์</a></li>
+                    <li><a href="find-job.html">ค้นหางาน</a></li>
+                    <li><a href="post_project.html">โพสงาน</a></li>
+                    <li><a href="fee.html">ค่าธรรมเนียม</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">ติดต่อสอบถาม</a></li>
+                    <li><a href="help.html">ช่วยเหลือ</a></li>
+                  </ul>
+                </div><!-- /.navbar-collapse -->
+              </div><!-- /.container-fluid -->
+            </nav>
+		</navbar>
+		<div class="site-content">
+		    <div id="job-recom">
+		        <div class="container">
+		            <div class="row">
+		                <div class="col-md-12">
+		                    <div class="page-header" id="content-head">
+		                        <h2>งานที่เราแนะนำ</h2>
+		                    </div>
+		                </div><!--col-md-12"-->
+		                <div class="col-md-12">
+		                    <div id="job-recom-area">
+		                        <ul id="job-thumb">
+		                            <li>
+		                                <img src="img/job-thumb.jpg" class="img-responsive">
+		                                <div id="job-thumb-detail">
+		                                    <a href="#">หาคนออกแบบ Logo ตามรายละเอียดเชิญทางนี้ครับ</a>
+		                                    <div class="clearfix" id="job-thumb-buttom">
+                                                <div class="clearfix" id="job-profile">
+                                                    <img src="img/job-profile.jpg">
+                                                    <a href="#">IT_007</a>
+                                                </div>
+                                                <div class="clearfix" id="job-price">
+                                                    <p>฿2,500</p>
+                                                    <span>ผู้สนใจ 8 คน</span>
+                                                </div>
+		                                    </div>
+		                                </div>
+		                            </li>
+		                             <li>
+		                                <img src="img/job-thumb.jpg" class="img-responsive">
+		                                <div id="job-thumb-detail">
+		                                    <a href="#">หาคนออกแบบ Logo ตามรายละเอียดเชิญทางนี้ครับ</a>
+		                                    <div class="clearfix" id="job-thumb-buttom">
+                                                <div class="clearfix" id="job-profile">
+                                                    <img src="img/job-profile.jpg">
+                                                    <a href="#">IT_007</a>
+                                                </div>
+                                                <div class="clearfix" id="job-price">
+                                                    <p>฿2,500</p>
+                                                    <span>ผู้สนใจ 8 คน</span>
+                                                </div>
+		                                    </div>
+		                                </div>
+		                            </li>
+		                             <li>
+		                                <img src="img/job-thumb.jpg" class="img-responsive">
+		                                <div id="job-thumb-detail">
+		                                    <a href="#">หาคนออกแบบ Logo ตามรายละเอียดเชิญทางนี้ครับ</a>
+		                                    <div class="clearfix" id="job-thumb-buttom">
+                                                <div class="clearfix" id="job-profile">
+                                                    <img src="img/job-profile.jpg">
+                                                    <a href="#">IT_007</a>
+                                                </div>
+                                                <div class="clearfix" id="job-price">
+                                                    <p>฿2,500</p>
+                                                    <span>ผู้สนใจ 8 คน</span>
+                                                </div>
+		                                    </div>
+		                                </div>
+		                            </li>
+		                             <li>
+		                                <img src="img/job-thumb.jpg" class="img-responsive">
+		                                <div id="job-thumb-detail">
+		                                    <a href="#">หาคนออกแบบ Logo ตามรายละเอียดเชิญทางนี้ครับ</a>
+		                                    <div class="clearfix" id="job-thumb-buttom">
+                                                <div class="clearfix" id="job-profile">
+                                                    <img src="img/job-profile.jpg">
+                                                    <a href="#">IT_007</a>
+                                                </div>
+                                                <div class="clearfix" id="job-price">
+                                                    <p>฿2,500</p>
+                                                    <span>ผู้สนใจ 8 คน</span>
+                                                </div>
+		                                    </div>
+		                                </div>
+		                            </li>
+		                             <li>
+		                                <img src="img/job-thumb.jpg" class="img-responsive">
+		                                <div id="job-thumb-detail">
+		                                    <a href="#">หาคนออกแบบ Logo ตามรายละเอียดเชิญทางนี้ครับ</a>
+		                                    <div class="clearfix" id="job-thumb-buttom">
+                                                <div class="clearfix" id="job-profile">
+                                                    <img src="img/job-profile.jpg">
+                                                    <a href="#">IT_007</a>
+                                                </div>
+                                                <div class="clearfix" id="job-price">
+                                                    <p>฿2,500</p>
+                                                    <span>ผู้สนใจ 8 คน</span>
+                                                </div>
+		                                    </div>
+		                                </div>
+		                            </li>
+		                            <li>
+		                                <img src="img/job-thumb.jpg" class="img-responsive">
+		                                <div id="job-thumb-detail">
+		                                    <a href="#">หาคนออกแบบ Logo ตามรายละเอียดเชิญทางนี้ครับ</a>
+		                                    <div class="clearfix" id="job-thumb-buttom">
+                                                <div class="clearfix" id="job-profile">
+                                                    <img src="img/job-profile.jpg">
+                                                    <a href="#">IT_007</a>
+                                                </div>
+                                                <div class="clearfix" id="job-price">
+                                                    <p>฿2,500</p>
+                                                    <span>ผู้สนใจ 8 คน</span>
+                                                </div>
+		                                    </div>
+		                                </div>
+		                            </li>
+		                             <li>
+		                                <img src="img/job-thumb.jpg" class="img-responsive">
+		                                <div id="job-thumb-detail">
+		                                    <a href="#">หาคนออกแบบ Logo ตามรายละเอียดเชิญทางนี้ครับ</a>
+		                                    <div class="clearfix" id="job-thumb-buttom">
+                                                <div class="clearfix" id="job-profile">
+                                                    <img src="img/job-profile.jpg">
+                                                    <a href="#">IT_007</a>
+                                                </div>
+                                                <div class="clearfix" id="job-price">
+                                                    <p>฿2,500</p>
+                                                    <span>ผู้สนใจ 8 คน</span>
+                                                </div>
+		                                    </div>
+		                                </div>
+		                            </li>
+		                             <li>
+		                                <img src="img/job-thumb.jpg" class="img-responsive">
+		                                <div id="job-thumb-detail">
+		                                    <a href="#">หาคนออกแบบ Logo ตามรายละเอียดเชิญทางนี้ครับ</a>
+		                                    <div class="clearfix" id="job-thumb-buttom">
+                                                <div class="clearfix" id="job-profile">
+                                                    <img src="img/job-profile.jpg">
+                                                    <a href="#">IT_007</a>
+                                                </div>
+                                                <div class="clearfix" id="job-price">
+                                                    <p>฿2,500</p>
+                                                    <span>ผู้สนใจ 8 คน</span>
+                                                </div>
+		                                    </div>
+		                                </div>
+		                            </li>
+		                             <li>
+		                                <img src="img/job-thumb.jpg" class="img-responsive">
+		                                <div id="job-thumb-detail">
+		                                    <a href="#">หาคนออกแบบ Logo ตามรายละเอียดเชิญทางนี้ครับ</a>
+		                                    <div class="clearfix" id="job-thumb-buttom">
+                                                <div class="clearfix" id="job-profile">
+                                                    <img src="img/job-profile.jpg">
+                                                    <a href="#">IT_007</a>
+                                                </div>
+                                                <div class="clearfix" id="job-price">
+                                                    <p>฿2,500</p>
+                                                    <span>ผู้สนใจ 8 คน</span>
+                                                </div>
+		                                    </div>
+		                                </div>
+		                            </li>
+		                             <li>
+		                                <img src="img/job-thumb.jpg" class="img-responsive">
+		                                <div id="job-thumb-detail">
+		                                    <a href="#">หาคนออกแบบ Logo ตามรายละเอียดเชิญทางนี้ครับ</a>
+		                                    <div class="clearfix" id="job-thumb-buttom">
+                                                <div class="clearfix" id="job-profile">
+                                                    <img src="img/job-profile.jpg">
+                                                    <a href="#">IT_007</a>
+                                                </div>
+                                                <div class="clearfix" id="job-price">
+                                                    <p>฿2,500</p>
+                                                    <span>ผู้สนใจ 8 คน</span>
+                                                </div>
+		                                    </div>
+		                                </div>
+		                            </li>
+		                        </ul>
+		                    </div>
+		                </div><!--col-md-12"-->
+		            </div>
+		        </div>
+		    </div><!--job-recom-->
+		    <div id="find-freelance">
+		        <div class="container">
+		            <div class="row">
+		                <div class="col-md-12">
+		                    <div class="page-header" id="content-head">
+                                <h2>ค้นหาฟรีแลนซ์กับ <span>Job</span>bid</h2>
+		                    </div>
+		                </div><!--col-md-12-->
+		                <div class="col-md-12">
+		                    <div id="find-freelance-area">
+		                        <ul id="find-free-ul">
+		                            <li>
+		                                <p><i class="flaticon-color-dropper" id="icon-blue"></i></p>
+		                                <a href="#">งานกราฟิกดีไซน์</a>
+		                            </li>
+		                            <li>
+		                                <p><i class="flaticon-left-alignment-paragraph" id="icon-yellow"></i></p>
+		                                <a href="#">โปรแกรมเมอร์</a>
+		                            </li>
+		                            <li>
+		                                <p><i class="flaticon-camera-shutter" id="icon-blue"></i></p>
+		                                <a href="#">เสียงและวิดีโอ</a>
+		                            </li>
+		                            <li>
+		                                <p><i class="flaticon-browser-grid" id="icon-red"></i></p>
+		                                <a href="#">การตลาดและโฆษณา</a>
+		                            </li>
+		                            <li>
+		                                <p><i class="flaticon-color-dropper" id="icon-blue"></i></p>
+		                                <a href="#">งานกราฟิกดีไซน์</a>
+		                            </li>
+		                            <li>
+		                                <p><i class="flaticon-color-dropper" id="icon-blue"></i></p>
+		                                <a href="#">งานกราฟิกดีไซน์</a>
+		                            </li>
+		                            <li>
+		                                <p><i class="flaticon-color-dropper" id="icon-blue"></i></p>
+		                                <a href="#">งานกราฟิกดีไซน์</a>
+		                            </li>
+		                            <li>
+		                                <p><i class="flaticon-color-dropper" id="icon-blue"></i></p>
+		                                <a href="#">งานกราฟิกดีไซน์</a>
+		                            </li>
+		                            
+		                        </ul>
+		                    </div>
+		                </div>
+		            </div>
+		        </div><!--container-->
+		    </div><!--find-freelance-->
+		    <div id="top10-freelance">
+		        <div class="container">
+		            <div class="row">
+		                <div class="col-md-12">
+		                    <div class="page-header" id="content-head">
+		                        <h2>Top 10 Freelance</h2>
+		                    </div>
+		                    <div id="top10-free-area">
+		                        <ul id="top10-free-ul">
+		                            <li>
+		                                <div id="top10-free-img">
+		                                    <img src="img/free-profile.jpg">
+		                                </div>
+		                                <div id="top10-free-detail">
+		                                    <p>ชื่อ : Html-coding</p>
+		                                    <p>ผลงานทั้งหมด : 28 งาน</p>
+		                                    <a href="#">ติดต่องาน</a>
+		                                </div>
+		                            </li>
+		                            <li>
+		                                <div id="top10-free-img">
+		                                    <img src="img/free-profile.jpg">
+		                                </div>
+		                                <div id="top10-free-detail">
+		                                    <p>ชื่อ : Html-coding</p>
+		                                    <p>ผลงานทั้งหมด : 28 งาน</p>
+		                                    <a href="#">ติดต่องาน</a>
+		                                </div>
+		                            </li>
+		                            <li>
+		                                <div id="top10-free-img">
+		                                    <img src="img/free-profile.jpg">
+		                                </div>
+		                                <div id="top10-free-detail">
+		                                    <p>ชื่อ : Html-coding</p>
+		                                    <p>ผลงานทั้งหมด : 28 งาน</p>
+		                                    <a href="#">ติดต่องาน</a>
+		                                </div>
+		                            </li>
+		                            <li>
+		                                <div id="top10-free-img">
+		                                    <img src="img/free-profile.jpg">
+		                                </div>
+		                                <div id="top10-free-detail">
+		                                    <p>ชื่อ : Html-coding</p>
+		                                    <p>ผลงานทั้งหมด : 28 งาน</p>
+		                                    <a href="#">ติดต่องาน</a>
+		                                </div>
+		                            </li>
+		                            <li>
+		                                <div id="top10-free-img">
+		                                    <img src="img/free-profile.jpg">
+		                                </div>
+		                                <div id="top10-free-detail">
+		                                    <p>ชื่อ : Html-coding</p>
+		                                    <p>ผลงานทั้งหมด : 28 งาน</p>
+		                                    <a href="#">ติดต่องาน</a>
+		                                </div>
+		                            </li>
+		                            <li>
+		                                <div id="top10-free-img">
+		                                    <img src="img/free-profile.jpg">
+		                                </div>
+		                                <div id="top10-free-detail">
+		                                    <p>ชื่อ : Html-coding</p>
+		                                    <p>ผลงานทั้งหมด : 28 งาน</p>
+		                                    <a href="#">ติดต่องาน</a>
+		                                </div>
+		                            </li>
+		                            <li>
+		                                <div id="top10-free-img">
+		                                    <img src="img/free-profile.jpg">
+		                                </div>
+		                                <div id="top10-free-detail">
+		                                    <p>ชื่อ : Html-coding</p>
+		                                    <p>ผลงานทั้งหมด : 28 งาน</p>
+		                                    <a href="#">ติดต่องาน</a>
+		                                </div>
+		                            </li>
+		                            <li>
+		                                <div id="top10-free-img">
+		                                    <img src="img/free-profile.jpg">
+		                                </div>
+		                                <div id="top10-free-detail">
+		                                    <p>ชื่อ : Html-coding</p>
+		                                    <p>ผลงานทั้งหมด : 28 งาน</p>
+		                                    <a href="#">ติดต่องาน</a>
+		                                </div>
+		                            </li>
+		                            <li>
+		                                <div id="top10-free-img">
+		                                    <img src="img/free-profile.jpg">
+		                                </div>
+		                                <div id="top10-free-detail">
+		                                    <p>ชื่อ : Html-coding</p>
+		                                    <p>ผลงานทั้งหมด : 28 งาน</p>
+		                                    <a href="#">ติดต่องาน</a>
+		                                </div>
+		                            </li>
+		                            <li>
+		                                <div id="top10-free-img">
+		                                    <img src="img/free-profile.jpg">
+		                                </div>
+		                                <div id="top10-free-detail">
+		                                    <p>ชื่อ : Html-coding</p>
+		                                    <p>ผลงานทั้งหมด : 28 งาน</p>
+		                                    <a href="#">ติดต่องาน</a>
+		                                </div>
+		                            </li>
+		                        </ul>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		    <div id="site-reviews">
+		        <div class="container">
+		            <div class="row">
+		                <div class="col-md-12">
+		                    <div class="page-header" id="content-head">
+		                        <h2>รีวิวจากผู้ว่าจ้างจริง</h2>
+		                    </div>
+		                </div>
+		                <div class="col-md-12">
+		                    <div id="reviews-area">
+		                        <ul id="reviews-ul">
+		                            <li>
+		                                <div id="reviews-img">
+		                                    <img src="img/review-pro.jpg">
+		                                </div>
+		                                <div id="reviews-detail">
+		                                    <b>คุณ : Html-coding</b>
+		                                    <p>เยี่ยมมากๆเลยครับงานดีมีคุณภาพสุดๆ ไม่ผิดหวังเลยครับที่เลือก Jobbid</p>
+		                                    <div id="review-star">
+		                                        <i class="glyphicon glyphicon-star"></i>
+		                                        <i class="glyphicon glyphicon-star"></i>
+		                                        <i class="glyphicon glyphicon-star"></i>
+		                                        <i class="glyphicon glyphicon-star"></i>
+		                                        <i class="glyphicon glyphicon-star"></i>
+		                                    </div>
+		                                </div>
+		                            </li>
+		                             <li>
+		                                <div id="reviews-img">
+		                                    <img src="img/review-pro.jpg">
+		                                </div>
+		                                <div id="reviews-detail">
+		                                    <b>คุณ : Html-coding</b>
+		                                    <p>เยี่ยมมากๆเลยครับงานดีมีคุณภาพสุดๆ ไม่ผิดหวังเลยครับที่เลือก Jobbid</p>
+		                                    <div id="review-star">
+		                                        <i class="glyphicon glyphicon-star"></i>
+		                                        <i class="glyphicon glyphicon-star"></i>
+		                                        <i class="glyphicon glyphicon-star"></i>
+		                                        <i class="glyphicon glyphicon-star"></i>
+		                                        <i class="glyphicon glyphicon-star"></i>
+		                                    </div>
+		                                </div>
+		                            </li>
+		                             <li>
+		                                <div id="reviews-img">
+		                                    <img src="img/review-pro.jpg">
+		                                </div>
+		                                <div id="reviews-detail">
+		                                    <b>คุณ : Html-coding</b>
+		                                    <p>เยี่ยมมากๆเลยครับงานดีมีคุณภาพสุดๆ ไม่ผิดหวังเลยครับที่เลือก Jobbid</p>
+		                                    <div id="review-star">
+		                                        <i class="glyphicon glyphicon-star"></i>
+		                                        <i class="glyphicon glyphicon-star"></i>
+		                                        <i class="glyphicon glyphicon-star"></i>
+		                                        <i class="glyphicon glyphicon-star"></i>
+		                                        <i class="glyphicon glyphicon-star"></i>
+		                                    </div>
+		                                </div>
+		                            </li>
+		                             <li>
+		                                <div id="reviews-img">
+		                                    <img src="img/review-pro.jpg">
+		                                </div>
+		                                <div id="reviews-detail">
+		                                    <b>คุณ : Html-coding</b>
+		                                    <p>เยี่ยมมากๆเลยครับงานดีมีคุณภาพสุดๆ ไม่ผิดหวังเลยครับที่เลือก Jobbid</p>
+		                                    <div id="review-star">
+		                                        <i class="glyphicon glyphicon-star"></i>
+		                                        <i class="glyphicon glyphicon-star"></i>
+		                                        <i class="glyphicon glyphicon-star"></i>
+		                                        <i class="glyphicon glyphicon-star"></i>
+		                                        <i class="glyphicon glyphicon-star"></i>
+		                                    </div>
+		                                </div>
+		                            </li>
+		                             <li>
+		                                <div id="reviews-img">
+		                                    <img src="img/review-pro.jpg">
+		                                </div>
+		                                <div id="reviews-detail">
+		                                    <b>คุณ : Html-coding</b>
+		                                    <p>เยี่ยมมากๆเลยครับงานดีมีคุณภาพสุดๆ ไม่ผิดหวังเลยครับที่เลือก Jobbid</p>
+		                                    <div id="review-star">
+		                                        <i class="glyphicon glyphicon-star"></i>
+		                                        <i class="glyphicon glyphicon-star"></i>
+		                                        <i class="glyphicon glyphicon-star"></i>
+		                                        <i class="glyphicon glyphicon-star"></i>
+		                                        <i class="glyphicon glyphicon-star"></i>
+		                                    </div>
+		                                </div>
+		                            </li>
+		                             <li>
+		                                <div id="reviews-img">
+		                                    <img src="img/review-pro.jpg">
+		                                </div>
+		                                <div id="reviews-detail">
+		                                    <b>คุณ : Html-coding</b>
+		                                    <p>เยี่ยมมากๆเลยครับงานดีมีคุณภาพสุดๆ ไม่ผิดหวังเลยครับที่เลือก Jobbid</p>
+		                                    <div id="review-star">
+		                                        <i class="glyphicon glyphicon-star"></i>
+		                                        <i class="glyphicon glyphicon-star"></i>
+		                                        <i class="glyphicon glyphicon-star"></i>
+		                                        <i class="glyphicon glyphicon-star"></i>
+		                                        <i class="glyphicon glyphicon-star"></i>
+		                                    </div>
+		                                </div>
+		                            </li>
+		                            
+		                        </ul>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		    <div id="web-partner">
+		        <div class="container">
+		            <div class="row">
+		                <div class="col-md-12">
+		                    <div class="page-header" id="content-head">
+		                        <h2>Web Partner</h2>
+		                    </div>
+		                </div>
+		                <div class="col-md-12">
+		                    <div id="web-partner-area">
+		                        <ul>
+		                            <li>
+		                                <img src="img/thaicredit-logo.png">
+		                            </li>
+		                            <li>
+		                                <img src="img/jobbid_logo.jpg">
+		                            </li>
+		                            <li>
+		                                <img src="img/google-partners.png">
+		                            </li>
+		                        </ul>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</div><!--site-content-->
+		<footer>
+		    <div class="container">
+		        <div class="row">
+		            <div class="col-md-12">
+		                <div id="footer-area">
+		                    <p>ติดต่อสอบถาม ทางโทรศัพท์ : 094-462-6981, 085-082-4441 หรือ ทาง Email : support@ddcovey.co.th</p>
+		                    <p>ตั้งแต่เวลา 9.00 - 18.00 ทุกวันจันทร์ - วันศุกร์ในเวลาทำการ</p>
+		                    <p><b>พัฒนาโดยทีมงาน DDcovey Team</b></p>
+		                    <p>สนใจออกแบบเว็ปไซต์หรือเขียนระบบบนเว็ปไซต์ติดต่อ (www.ddcovey.co.th)</p>
+		                    <p>หมายเลขทะเบียนประกอบพานิชย์อิเลคทรอนิกส์ :3100200257414 คำขอที่ : 6351551000453</p>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		    <div id="footer-nav">
+		        <div class="container">
+		            <div class="row">
+		                <div class="col-md-12">
+		                    <p>www.thaiwebbid.com @ allrights reserved 2007.</p>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</footer>
+	</div><!-- /warp -->
+</body>
+</html>
