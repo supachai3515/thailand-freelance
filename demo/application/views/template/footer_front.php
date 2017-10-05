@@ -1,11 +1,17 @@
 
 
-    <footer class="main-footer">
+  <footer class="main-footer">
+    <div class="container">
         <div class="pull-right hidden-xs">
           <b>WISADEV</b> | Version 1.0
         </div>
         <strong>Copyright &copy; 2017-2018 <a href="<?php echo base_url(); ?>"><?php echo $this->config->item('sitename'); ?></a>.</strong> All rights reserved.
+      </div>
+      <!-- /.container -->
     </footer>
+  </div>
+  <!-- ./wrapper -->
+
     <!-- jQuery UI 1.11.2 -->
     <!-- <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.min.js" type="text/javascript"></script> -->
     <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
