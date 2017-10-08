@@ -166,8 +166,11 @@
                   </li>
                 </ul>
               </li>
+              <li><a href="<?php echo base_url(); ?>login"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;&nbsp;เข้าสู่ระบบ</a></li>
+              <li><a href="<?php echo base_url(); ?>register"><i class="fa fa-address-book-o" aria-hidden="true"></i>&nbsp;&nbsp;สมัครสมาชิก</a></li>
               <!-- User Account Menu -->
-              <li class="dropdown user user-menu">
+              <li class="dropdown user user-menu" style="display: none;">
+                
                 <!-- Menu Toggle Button -->
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <!-- The user image in the navbar-->
