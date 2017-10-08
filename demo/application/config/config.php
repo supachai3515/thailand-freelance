@@ -29,7 +29,7 @@ $config['email_name'] = "supachai";
 $config['email_owner'] = "supachai.wi@hotmail.com";
 $config['email_noreply'] = "";
 $config['pass_mail_noreply'] = "";
-$config['weburl'] = "http://www.cyberbatt.com/";
+$config['weburl'] = "https://www.thailand-freelance.com/demo";
 
 //information
 $config['pre_page'] = "10";
