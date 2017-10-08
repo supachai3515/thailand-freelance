@@ -7,7 +7,6 @@ class Project_model extends CI_Model
     {
         parent::__construct();
         $this->db->query("SET NAMES 'utf8'");
-        $this->load->model('utilities');
     }
 
     function get_project_count($searchText = '')
