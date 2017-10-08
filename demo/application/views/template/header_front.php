@@ -5,9 +5,7 @@
   <meta name="description" content="<?php echo $header['description'];?>">
   <meta name="keyword" content="<?php echo $header['keyword'];?>" />
   <meta name="author" content="<?php echo $header['author'];?>">
-  <title>
-    <?=$header['title'];?>
-  </title>
+  <title><?=$header['title'];?></title>
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?php echo base_url('theme');?>/datepicker/css/bootstrap-datepicker3.css">
@@ -25,7 +23,7 @@
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/loading-bar.min.css">
   <link rel="stylesheet" type="text/css" href="<?php echo base_url(); ?>assets/dist/css/sweetalert2.css">
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/AdminLTE.min.css">
-  <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css">
+  <link rel="stylesheet" href="<?php echo base_url(); ?>css/style.css">
   <style>
     .error {
       color: red;
@@ -59,9 +57,9 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
             <ul class="nav navbar-nav">
-              <li class="active"><a href="#">freelance<span class="sr-only">(current)</span></a></li>
-              <li><a href="#">project</a></li>
-              <li><a href="#">portfolio</a></li>
+              <li><a href="<?php echo base_url('member'); ?>">freelance</a></li>
+              <li><a href="<?php echo base_url('project'); ?>">project</a></li>
+              <li><a href="<?php echo base_url('portfolio'); ?>">portfolio</a></li>
             </ul>
             <form class="navbar-form navbar-left navbar-input-group" role="search">
               <div class="form-group">

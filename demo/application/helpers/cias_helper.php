@@ -1,4 +1,6 @@
-<?php if(!defined('BASEPATH')) exit('No direct script access allowed');
+<?php if (!defined('BASEPATH')) {
+    exit('No direct script access allowed');
+}
 
 
 /**
@@ -11,19 +13,18 @@ function pre($data)
     echo "</pre>";
 }
 
-function json_output($statusHeader,$response)
+function json_output($statusHeader, $response)
 {
-  $ci =& get_instance();
-  $ci->output->set_content_type('application/json');
-  $ci->output->set_status_header($statusHeader);
-  $ci->output->set_output(json_encode($response));
+    $ci =& get_instance();
+    $ci->output->set_content_type('application/json');
+    $ci->output->set_status_header($statusHeader);
+    $ci->output->set_output(json_encode($response));
 }
 
 /**
  * This function used to get the CI instance
  */
-if(!function_exists('get_instance'))
-{
+if (!function_exists('get_instance')) {
     function get_instance()
     {
         $CI = &get_instance();
@@ -34,8 +35,7 @@ if(!function_exists('get_instance'))
  * This function used to generate the hashed password
  * @param {string} $plainPassword : This is plain text password
  */
-if(!function_exists('getHashedPassword'))
-{
+if (!function_exists('getHashedPassword')) {
     function getHashedPassword($plainPassword)
     {
         return password_hash($plainPassword, PASSWORD_DEFAULT);
@@ -47,8 +47,7 @@ if(!function_exists('getHashedPassword'))
  * @param {string} $plainPassword : This is plain text password
  * @param {string} $hashedPassword : This is hashed password
  */
-if(!function_exists('verifyHashedPassword'))
-{
+if (!function_exists('verifyHashedPassword')) {
     function verifyHashedPassword($plainPassword, $hashedPassword)
     {
         return password_verify($plainPassword, $hashedPassword) ? true : false;
@@ -58,8 +57,7 @@ if(!function_exists('verifyHashedPassword'))
 /**
  * This method used to get current browser agent
  */
-if(!function_exists('getBrowserAgent'))
-{
+if (!function_exists('getBrowserAgent')) {
     function getBrowserAgent()
     {
         $CI = get_instance();
@@ -67,20 +65,13 @@ if(!function_exists('getBrowserAgent'))
 
         $agent = '';
 
-        if ($CI->agent->is_browser())
-        {
+        if ($CI->agent->is_browser()) {
             $agent = $CI->agent->browser().' '.$CI->agent->version();
-        }
-        else if ($CI->agent->is_robot())
-        {
+        } elseif ($CI->agent->is_robot()) {
             $agent = $CI->agent->robot();
-        }
-        else if ($CI->agent->is_mobile())
-        {
+        } elseif ($CI->agent->is_mobile()) {
             $agent = $CI->agent->mobile();
-        }
-        else
-        {
+        } else {
             $agent = 'Unidentified User Agent';
         }
 
@@ -88,8 +79,7 @@ if(!function_exists('getBrowserAgent'))
     }
 }
 
-if(!function_exists('setProtocol'))
-{
+if (!function_exists('setProtocol')) {
     function setProtocol()
     {
         $CI = &get_instance();
@@ -112,8 +102,7 @@ if(!function_exists('setProtocol'))
     }
 }
 
-if(!function_exists('emailConfig'))
-{
+if (!function_exists('emailConfig')) {
     function emailConfig()
     {
         $CI->load->library('email');
@@ -124,12 +113,11 @@ if(!function_exists('emailConfig'))
         $config['charset'] = 'UTF-8';
         $config['mailtype'] = "html";
         $config['newline'] = "\r\n";
-        $config['wordwrap'] = TRUE;
+        $config['wordwrap'] = true;
     }
 }
 
-if(!function_exists('resetPasswordEmail'))
-{
+if (!function_exists('resetPasswordEmail')) {
     function resetPasswordEmail($detail)
     {
         $data["data"] = $detail;
@@ -140,7 +128,7 @@ if(!function_exists('resetPasswordEmail'))
 
         $CI->email->from(EMAIL_FROM, FROM_NAME);
         $CI->email->subject("Reset Password");
-        $CI->email->message($CI->load->view('email/resetPassword', $data, TRUE));
+        $CI->email->message($CI->load->view('email/resetPassword', $data, true));
         $CI->email->to($detail["email"]);
         $status = $CI->email->send();
 
@@ -148,8 +136,7 @@ if(!function_exists('resetPasswordEmail'))
     }
 }
 
-if(!function_exists('send_emali_template'))
-{
+if (!function_exists('send_emali_template')) {
     function send_emali_template($detail)
     {
         $data["data"] = $detail;
@@ -161,7 +148,7 @@ if(!function_exists('send_emali_template'))
         $CI->email->from(EMAIL_FROM, FROM_NAME);
         $CI->email->subject($detail["subject"]);
         $CI->email->bcc($detail["bcc_mail"]);
-        $CI->email->message($CI->load->view($detail["template"], $detail, TRUE));
+        $CI->email->message($CI->load->view($detail["template"], $detail, true));
         $CI->email->to($detail["email"]);
         $status = $CI->email->send();
 
@@ -170,8 +157,7 @@ if(!function_exists('send_emali_template'))
 }
 
 
-if(!function_exists('setFlashData'))
-{
+if (!function_exists('setFlashData')) {
     function setFlashData($status, $flashMsg)
     {
         $CI = get_instance();
@@ -179,4 +165,35 @@ if(!function_exists('setFlashData'))
     }
 }
 
-?>
+
+if (!function_exists('CheckUrlImg')) {
+    function CheckUrlImg($urlPath, $urlPathName,$imgeCase ="")
+    {
+        if ($urlPathName=="") {
+          if($imgeCase =="cover"){
+            return base_url("/img/Cover.jpg");
+          }
+          elseif ($imgeCase == "") {
+            return base_url("/img/avatar.png");
+          }
+
+        } else {
+            return $urlPath.$urlPathName;
+        }
+    }
+}
+
+if (!function_exists('get_day_name')) {
+    function get_day_name($timestamp)
+    {
+        $date = date('d/m/Y', $timestamp);
+
+        if ($date == date('d/m/Y')) {
+            $date = 'Today';
+        } elseif ($date == date('d/m/Y', strtotime("-1 days"))) {
+            $date = 'Yesterday';
+        }
+        return $date;
+
+    }
+}

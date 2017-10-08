@@ -22,7 +22,7 @@ $config['base_url'] .= str_replace(basename($_SERVER['SCRIPT_NAME']),"",$_SERVER
 $config['short_sitename'] = "thailand-freelance";
 $config['sitename'] = "thailand-freelance";
 $config['tagline'] = "thailand-freelance";
-$config['url_img'] = "https://www.thailand-freelance.com/";
+$config['url_img'] = "https://www.thailand-freelance.com/uploads/";
 $config['no_url_img'] = "https://www.thailand-freelance.com/uploads/no_image.jpg";
 
 $config['email_name'] = "supachai";

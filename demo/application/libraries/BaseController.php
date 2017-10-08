@@ -239,11 +239,17 @@ class BaseController extends CI_Controller
         }
     }
 
-		public function get_header($title)
+		public function get_header($title, $des ="",$key="")
     {
+      if($des=="")
+        $des=$title;
+
+        if($key=="")
+          $key=$title;
+
 			 return array('title' => $title.' | '.$this->config->item('sitename'),
-															'description' =>  $title.' | '.$this->config->item('tagline'),
+															'description' =>  $des.' | '.$this->config->item('tagline'),
 															'author' => $this->config->item('author'),
-															'keyword' => $title);
+															'keyword' => $key);
     }
 }
