@@ -6,7 +6,7 @@
     
     <div class="login-box">
   <div class="login-logo">
-    <a href="../../index2.html"><b>Thailand</b>Freelance</a>
+    <a href="<?php echo base_url(); ?>"><b>Thailand</b>Freelance</a>
   </div>
 
   <div class="register-box-body">
