@@ -47,3 +47,23 @@
     max-width: none;
     height: 100%;
 }
+
+.widget-user .widget-user-image {
+    border: 3px solid #fff;
+    width: 90px;
+    height: 90px;
+    overflow: hidden;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border-radius: 50%;
+}
+.widget-user .widget-user-image img {
+    border: none;
+    display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: auto;
+    border-radius: 0; 
+}
