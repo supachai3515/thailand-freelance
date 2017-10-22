@@ -1,6 +1,4 @@
-<?php
-defined('BASEPATH') OR exit('No direct script access allowed');
-
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /*
 | -------------------------------------------------------------------------
 | URI ROUTING
@@ -19,13 +17,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 | Please see the user guide for complete details:
 |
-|	https://codeigniter.com/user_guide/general/routing.html
+|	http://codeigniter.com/user_guide/general/routing.html
 |
 | -------------------------------------------------------------------------
 | RESERVED ROUTES
 | -------------------------------------------------------------------------
 |
-| There are three reserved routes:
+| There area two reserved routes:
 |
 |	$route['default_controller'] = 'welcome';
 |
@@ -35,55 +33,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |
 |	$route['404_override'] = 'errors/page_missing';
 |
-| This route will tell the Router which controller/method to use if those
-| provided in the URL cannot be matched to a valid route.
+| This route will tell the Router what URI segments to use if those provided
+| in the URL cannot be matched to a valid route.
 |
-|	$route['translate_uri_dashes'] = FALSE;
-|
-| This is not exactly a route, but allows you to automatically route
-| controller and method names that contain dashes. '-' isn't a valid
-| class or method name character, so it requires translation.
-| When you set this option to TRUE, it will replace ALL dashes in the
-| controller and method URI segments.
-|
-| Examples:	my-controller/index	-> my_controller/index
-|		my-controller/my-method	-> my_controller/my_method
 */
-$route['default_controller'] = 'home';
 
-$route['images_portfolio/(:any)'] = 'media/resize/$1';
-$route['media/(:any)'] = 'media/resize/$1';
+$route['default_controller'] = "home";
+$route['404_override'] = 'error';
 
-$route['freelance'] = 'findfreelance';
-$route['job'] = 'findjob';
-
-$route['freelance/search'] = 'findfreelance/search';
-$route['freelance/search/page'] = 'findfreelance/search/';
-$route['freelance/search/page/(:num)'] = 'findfreelance/search/page/$1';
-
-$route['job/search'] = 'findjob/search';
-$route['job/search/page'] = 'findjob/search/';
-$route['job/search/page/(:num)'] = 'findjob/search/page/$1';
-
-
-$route['find-freelance'] = 'findfreelance';
-
-$route['find-freelance/page'] = 'findfreelance';
-$route['find-freelance/page/(:num)'] = 'findfreelance/index/page/$1';
-
-$route['find-job/page'] = 'findjob';
-$route['find-job/page/(:num)'] = 'findjob/index/page/$1';
-
-$route['portfolio/page'] = 'portfolio';
-$route['portfolio/page/(:num)'] = 'portfolio/index/page/$1';
-
-$route['freelance/detail/(:num)'] = 'findfreelance/detail/$1';
-$route['job/detail/(:num)'] = 'findjob/detail/$1';
-
-
-$route['find-job'] = 'findjob';
-$route['post-project'] = 'postproject';
-
-
-$route['404_override'] = '';
-$route['translate_uri_dashes'] = FALSE;
+/* End of file routes.php */
+/* Location: ./application/config/routes.php */
