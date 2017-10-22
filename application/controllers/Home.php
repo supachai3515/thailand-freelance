@@ -10,10 +10,12 @@ class Home extends BaseController
     //call model inti
     $this->load->model('project_model');
     $this->load->model('member_model');
+    $this->isLoggedIn();
   }
 
   function index()
   {
+    $data['global'] = $this->global;
     $data["content"] = "home/home_view";
     $data["header"] = $this->get_header("home");
     $data["project_list"] = $this->project_model->get_project('',0,5);

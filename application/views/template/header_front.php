@@ -166,8 +166,13 @@
                   </li>
                 </ul>
               </li>
-              <li><a href="<?php echo base_url(); ?>login"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;&nbsp;เข้าสู่ระบบ</a></li>
-              <li><a href="<?php echo base_url(); ?>register"><i class="fa fa-address-book-o" aria-hidden="true"></i>&nbsp;&nbsp;สมัครสมาชิก</a></li>
+              <?php if (isset($global['memberName'])): ?>
+                  <?php echo $global['memberName'] ?>
+              <?php else: ?>
+                <li><a href="<?php echo base_url(); ?>login"><i class="fa fa-sign-in" aria-hidden="true"></i>&nbsp;&nbsp;เข้าสู่ระบบ</a></li>
+                <li><a href="<?php echo base_url(); ?>register"><i class="fa fa-address-book-o" aria-hidden="true"></i>&nbsp;&nbsp;สมัครสมาชิก</a></li>
+              <?php endif; ?>
+
               <!-- User Account Menu -->
               <li class="dropdown user user-menu" style="display: none;">
 

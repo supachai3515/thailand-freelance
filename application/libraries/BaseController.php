@@ -8,11 +8,8 @@
  */
 class BaseController extends CI_Controller
 {
-    protected $role = '';
-    protected $vendorId = '';
-    protected $name = '';
-    protected $roleText = '';
-    protected $menu_group_id = '';
+    protected $member_id = '';
+    protected $memberName = '';
     protected $global = array();
 
     /**
@@ -34,21 +31,21 @@ class BaseController extends CI_Controller
      */
     public function isLoggedIn()
     {
+
         $isLoggedIn = $this->session->userdata('isLoggedIn');
 
         if (! isset($isLoggedIn) || $isLoggedIn != true) {
             redirect('login');
         } else {
-            $this->role = $this->session->userdata('role');
-            $this->vendorId = $this->session->userdata('userId');
-            $this->name = $this->session->userdata('name');
-            $this->roleText = $this->session->userdata('roleText');
-            $this->menu_group_id = $this->session->userdata('menu_group_id');
+            $this->member_id = $this->session->userdata('menberId');
+            $this->memberName = $this->session->userdata('memberName');
 
-            $this->global ['name'] = $this->name;
-            $this->global ['role'] = $this->role;
-            $this->global ['menu_group_id'] = $this->menu_group_id;
-            $this->global ['role_text'] = $this->roleText;
+
+            $this->global['menberId'] = $this->member_id;
+            $this->global['memberName'] = $this->memberName;
+
+              print($this->global['menberId']);
+
         }
     }
 

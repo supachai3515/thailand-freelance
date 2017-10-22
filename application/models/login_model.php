@@ -10,23 +10,24 @@ class Login_model extends CI_Model
      * @param string $email : This is email of the user
      * @param string $password : This is encrypted password of the user
      */
-    public function loginMe($email, $password)
+    public function login_authen($email, $password)
     {
-        $this->db->select('BaseTbl.userId, BaseTbl.password, BaseTbl.name, BaseTbl.roleId, Roles.role, g.menu_group_id');
-        $this->db->from('tbl_users as BaseTbl');
-        $this->db->join('tbl_roles as Roles', 'Roles.roleId = BaseTbl.roleId');
-        $this->db->join('menu_group as g', 'BaseTbl.menu_group_id = g.menu_group_id');
-        $this->db->where('BaseTbl.email', $email);
-        $this->db->where('BaseTbl.isDeleted', 0);
-        $query = $this->db->get();
 
-        $user = $query->result();
+      // $this->db->escape() ใส่ '' ให้
+  		// $this->db->escape_str()  ไม่ใส่ '' ให้
+  		// $this->db->escape_like_str($searchText) like
 
-        if (!empty($user)) {
-            if (verifyHashedPassword($password, $user[0]->password)) {
-                return $user;
+       $email = $this->db->escape($email) ;
+        $sql =" SELECT * FROM tbm_member m WHERE m.email = $email";
+    		$query = $this->db->query($sql);
+    		$row = $query->row_array();
+        if (!empty($row)) {
+            //if (verifyHashedPassword($password, $user[0]["password"])) {
+            if ($password = $row['password']) {
+                return $row;
             } else {
-                return array();
+                $row['password'] ="";
+                return  $row;
             }
         } else {
             return array();
