@@ -5,12 +5,12 @@
   <meta name="description" content="<?php echo $header['description'];?>">
   <meta name="keyword" content="<?php echo $header['keyword'];?>" />
   <meta name="author" content="<?php echo $header['author'];?>">
-  <title><?=$header['title'];?></title>
+  <title><?php echo $header['title'];?></title>
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?php echo base_url('theme');?>/datepicker/css/bootstrap-datepicker3.css">
   <link rel="stylesheet" href="<?php echo base_url('theme');?>/datepicker/css/bootstrap-timepicker.css">
-  <link href="<?=base_url();?>css/fileinput.css" rel="stylesheet" type="text/css">
+  <link href="<?php echo base_url();?>css/fileinput.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
   <link rel="stylesheet" href="<?php echo base_url(); ?>assets/dist/css/skins/_all-skins.min.css">
@@ -170,7 +170,7 @@
               <li><a href="<?php echo base_url(); ?>register"><i class="fa fa-address-book-o" aria-hidden="true"></i>&nbsp;&nbsp;สมัครสมาชิก</a></li>
               <!-- User Account Menu -->
               <li class="dropdown user user-menu" style="display: none;">
-                
+
                 <!-- Menu Toggle Button -->
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                   <!-- The user image in the navbar-->

@@ -9,40 +9,38 @@ class Project_model extends CI_Model
         $this->db->query("SET NAMES 'utf8'");
     }
 
-    function get_project_count($searchText = '')
-  	{
-  		$searchText = $this->db->escape_like_str($searchText);
-  		$sql =" SELECT COUNT(r.project_id) as connt_id FROM  tbh_project r WHERE 1=1 ";
-      if(!empty($searchText)) {
-          $sql = $sql." AND (r.project_id  LIKE '%".$searchText."%' OR  r.name  LIKE '%".$searchText."%')";
-      }
-  		$query = $this->db->query($sql);
-  		$row = $query->row_array();
-  		return  $row['connt_id'];
-
-  	}
-
-    function get_project($searchText = '', $page, $segment)
+    public function get_project_count($searchText = '')
     {
+        $searchText = $this->db->escape_like_str($searchText);
+        $sql =" SELECT COUNT(r.project_id) as connt_id FROM  tbh_project r WHERE 1=1 ";
+        if (!empty($searchText)) {
+            $sql = $sql." AND (r.project_id  LIKE '%".$searchText."%' OR  r.name  LIKE '%".$searchText."%')";
+        }
+        $query = $this->db->query($sql);
+        $row = $query->row_array();
+        return  $row['connt_id'];
+    }
 
-  		$searchText = $this->db->escape_like_str($searchText);
-  		$page = $this->db->escape_str($page);
-  		$segment = $this->db->escape_str($segment);
+    public function get_project($searchText = '', $page, $segment)
+    {
+        $searchText = $this->db->escape_like_str($searchText);
+        $page = $this->db->escape_str($page);
+        $segment = $this->db->escape_str($segment);
 
-  		$sql =" SELECT p.*, CONCAT(m.firstname,m.lastname) member_name ,m.image member_image  FROM tbh_project p INNER JOIN tbm_member m ON p.member_id = m.member_id
+        $sql =" SELECT p.*, CONCAT(m.firstname,m.lastname) member_name ,m.image member_image  FROM tbh_project p INNER JOIN tbm_member m ON p.member_id = m.member_id
   					  WHERE 1=1 ";
-        if(!empty($searchText)) {
-    				$sql = $sql." AND (r.project_id  LIKE '%".$searchText."%' OR  r.name  LIKE '%".$searchText."%')";
-    		}
-  			$sql = $sql."ORDER BY create_date DESC LIMIT ".$page.",".$segment." ";
+        if (!empty($searchText)) {
+            $sql = $sql." AND (r.project_id  LIKE '%".$searchText."%' OR  r.name  LIKE '%".$searchText."%')";
+        }
+        $sql = $sql."ORDER BY create_date DESC LIMIT ".$page.",".$segment." ";
         $query = $this->db->query($sql);
         $result = $query->result_array();
         return $result;
     }
 
-  	function get_project_all()
+    public function get_project_all()
     {
-  		$sql ="SELECT r.* , u1.name create_by_name , u2.name  modified_by_name FROM  project r
+        $sql ="SELECT r.* , u1.name create_by_name , u2.name  modified_by_name FROM  project r
   						LEFT JOIN tbl_users u1 ON u1.userId = r.create_by
   						LEFT JOIN tbl_users u2 ON u2.userId = r.modified_by WHERE 1=1 ";
         $query = $this->db->query($sql);
@@ -50,64 +48,66 @@ class Project_model extends CI_Model
         return $result;
     }
 
-  	public function get_project_id($id)
-  	{
-  		$id = $this->db->escape_str($id);
-  		$sql ="SELECT r.* , u1.name create_by_name , u2.name  modified_by_name FROM  project r
+    public function get_project_id($id)
+    {
+        $id = $this->db->escape_str($id);
+        $sql ="SELECT r.* , u1.name create_by_name , u2.name  modified_by_name FROM  project r
   						LEFT JOIN tbl_users u1 ON u1.userId = r.create_by
   						LEFT JOIN tbl_users u2 ON u2.userId = r.modified_by
   						 WHERE r.project_id = '".$id."'";
-  		$query = $this->db->query($sql);
-  		$row = $query->row_array();
-  		return $row;
-  	}
+        $query = $this->db->query($sql);
+        $row = $query->row_array();
+        return $row;
+    }
 
-  	function save_project($project_info)
-  	{
-  			$this->db->trans_start();
-  			$this->db->insert('project', $project_info);
-  			$insert_id = $this->db->insert_id();
-  			$this->db->trans_complete();
-  			return $insert_id;
-  	}
+    public function save_project($project_info)
+    {
+        $this->db->trans_start();
+        $this->db->insert('project', $project_info);
+        $insert_id = $this->db->insert_id();
+        $this->db->trans_complete();
+        return $insert_id;
+    }
 
-  	function update_project($project_info,$id)
-  	{
-  			$this->db->where('project_id', $id);
-  			$this->db->update('project', $project_info);
-  			return TRUE;
-  	}
+    public function update_project($project_info, $id)
+    {
+        $this->db->where('project_id', $id);
+        $this->db->update('project', $project_info);
+        return true;
+    }
 
-  	public function get_project_detail($id)
-  	{
-  		  $id = $this->db->escape_str($id);
-  			$sql ="SELECT m.menu_id,m.`name`, md.is_add ,md.is_edit, md.is_view, md.is_active
+    public function get_project_detail($id)
+    {
+        $id = $this->db->escape_str($id);
+        $sql ="SELECT m.menu_id,m.`name`, md.is_add ,md.is_edit, md.is_view, md.is_active
   				FROM menu m
   				LEFT JOIN project_detail md ON m.menu_id = md.menu_id
   				WHERE md.project_id = ".$id."";
 
-  			$re = $this->db->query($sql);
-  			return $re->result_array();
-  	}
+        $re = $this->db->query($sql);
+        return $re->result_array();
+    }
 
-  	public function get_menu($id)
-  	{
-  		 $id = $this->db->escape_str($id);
-  			$sql ="SELECT m.* FROM menu m
+    public function get_menu($id)
+    {
+        $id = $this->db->escape_str($id);
+        $sql ="SELECT m.* FROM menu m
   				WHERE is_active = 1  AND  m.menu_id NOT IN (SELECT menu_id FROM  project_detail WHERE project_id = ".$id." ) ";
-  			$re = $this->db->query($sql);
-  			return $re->result_array();
-  	}
+        $re = $this->db->query($sql);
+        return $re->result_array();
+    }
 
-  	public function save_project_detail ($value){
-  		 $sql ="INSERT INTO `project_detail` (`menu_id`, `project_id`, `is_add`, `is_view`, `is_edit`) VALUES ('".$value->menu_id."', '".$value->project_id."','0', '1', '0') ";
-  		 $this->db->query($sql);
-  	}
+    public function save_project_detail($value)
+    {
+        $sql ="INSERT INTO `project_detail` (`menu_id`, `project_id`, `is_add`, `is_view`, `is_edit`) VALUES ('".$value->menu_id."', '".$value->project_id."','0', '1', '0') ";
+        $this->db->query($sql);
+    }
 
-  	public function update_project_detail ($value){
-  		 $sql = "UPDATE project_detail SET ".$value->case_update." =  '".$value->edit_valus."'  WHERE menu_id  = '".$value->menu_id."' AND  project_id = '".$value->project_id."' ";
-  		 $this->db->query($sql);
-  	}
+    public function update_project_detail($value)
+    {
+        $sql = "UPDATE project_detail SET ".$value->case_update." =  '".$value->edit_valus."'  WHERE menu_id  = '".$value->menu_id."' AND  project_id = '".$value->project_id."' ";
+        $this->db->query($sql);
+    }
 
 
     // 	function getProjectLimit($limit=20,$offset=0){
